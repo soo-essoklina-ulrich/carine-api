@@ -11,7 +11,7 @@ class Car(models.Model):
     description = models.TextField()
     price_per_day = models.DecimalField(max_digits=10, decimal_places=2)
     is_available = models.BooleanField(default=True)
-    created_by = models.ForeignKey(CustomerUser, on_delete=models.CASCADE)
+    created_by = models.ForeignKey(CustomerUser, on_delete=models.CASCADE, null=True, blank=True)
     image = models.ImageField(upload_to='car_images/', null=True, blank=True)
 
 
